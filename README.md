@@ -22,9 +22,14 @@ Demonstrate an end-to-end ETL process moving healthcare data from a raw CSV stat
 
 Below is a conceptual representation of the data flow:
 
-graph LR
+## graph LR
+
     A[Raw CSV: healthcare_fraud_detection.csv] --> B[Pandas Extraction]
+    
     B --> C{Transformation Layer}
+    
     C -->|Clean & Normalize| D[Structured Dataframe]
+    
     D --> E[Load: SQLite Database]
+    
     E --> F[(healthcare_revenue.db)]

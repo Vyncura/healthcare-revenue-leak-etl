@@ -17,5 +17,14 @@ Demonstrate an end-to-end ETL process moving healthcare data from a raw CSV stat
 2. **Transform**: Normalizes column names, handles missing CPT/Provider info, and standardizes formats.
 3. **Load**: Pushes cleaned data into a SQLite database (`healthcare_revenue.db`).
 
-## Data Lineage
-(The mermaid diagram from your notebook will render directly in GitHub's README!)
+## Data Lineage Diagram
+(The mermaid diagram from the notebook will render directly in GitHub's README!)
+
+Below is a conceptual representation of the data flow:
+
+graph LR
+    A[Raw CSV: healthcare_fraud_detection.csv] --> B[Pandas Extraction]
+    B --> C{Transformation Layer}
+    C -->|Clean & Normalize| D[Structured Dataframe]
+    D --> E[Load: SQLite Database]
+    E --> F[(healthcare_revenue.db)]
